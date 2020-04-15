@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
+import Nav from '../Nav/Nav';
+
 class App extends Component {
 
   render() {
     return (
       <main>
-        <h2>Louisiana Micreauxbreweries</h2>
+        <Nav />
       </main>
     )
   }
