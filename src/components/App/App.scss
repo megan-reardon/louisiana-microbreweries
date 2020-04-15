@@ -1,0 +1,25 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-family: 'Inria Sans', sans-serif;
+  margin:0;
+  padding:0;
+}
+
+main {
+  height:100%;
+  width:100%;
+
+  header {
+    background: #DED1EE;
+    position: sticky;
+    top: 0px;
+    z-index: 9999;
+  }
+  .margin-wrap {
+  margin:0 auto;
+  max-width:1500px;
+  width:100%;
+  }
+}

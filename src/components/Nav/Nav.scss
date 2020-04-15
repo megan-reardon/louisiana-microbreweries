@@ -1,0 +1,23 @@
+header {
+  padding: 0;
+  width:100%;
+  height: 5em;
+  @include dropShadow;
+  font-family: 'Inria Sans', sans-serif;
+  display: inline-block;
+
+  div {
+    width: 26em;
+  }
+
+  img {
+    width: 3em;
+    height: 3em;
+    margin: 1em 1em 0 1em;
+  }
+
+  h2 {
+    display: inline-block;
+    font-weight: normal;
+  }
+}
