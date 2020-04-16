@@ -32,7 +32,7 @@ class App extends Component {
           <Route
             path="/breweries/:id/" exact
             render={({ match }) => {
-              const selectedBrewery = this.props.brewery.find(brewery => parseInt(match.params.id) === brewery.id)
+              const selectedBrewery = this.props.breweries.find(brewery => parseInt(match.params.id) === brewery.id)
               return <BreweryDetails
                      {...selectedBrewery}
                      />

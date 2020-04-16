@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const BreweryCard = ({ id, name, city }) => {
   return (
     <Link
-    to={`/movies/${id}`}
+    to={`/breweries/${id}`}
     >
     <div className='brewery-card'>
       <img src={`../../../logos/${id}.png`} alt={`Logo for ${name}`}/>
