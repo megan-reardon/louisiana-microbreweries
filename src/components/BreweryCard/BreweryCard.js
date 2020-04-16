@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const BreweryCard = ({ id, name, city }) => {
   return (
     <div className='brewery-card'>
-      <img src={`../../../logos/${id}.png`} />
+      <img src={`../../../logos/${id}.png`} alt={`Logo for ${name}`}/>
       <div className='brewery-city-container'>
         <h2>
         {name}
@@ -21,6 +21,5 @@ const BreweryCard = ({ id, name, city }) => {
 const mapStateToProps = (state) => ({
   breweries: state.breweries
 })
-
 
 export default connect(mapStateToProps, null)(BreweryCard);

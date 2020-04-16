@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <header>
       <div>
-        <img src='../../../logos/fleur-de-lis.svg' />
+        <img src='../../../logos/fleur-de-lis.svg' alt='Fleur de lis logo'/>
         <h2>Louisiana Micreauxbreweries</h2>
       </div>
     </header>
