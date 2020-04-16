@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getBreweries } from '../../actions';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
 import Nav from '../Nav/Nav';
-import { apifetchBreweries } from '../apiCalls'
+import { apifetchBreweries } from '../../apiCalls';
 
 class App extends Component {
 
@@ -23,8 +24,12 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  breweries: state.breweries,
+})
+
 const mapDispatchToProps = (dispatch) => ({
   fetchBreweries: breweries => dispatch( getBreweries(breweries))
 })
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
