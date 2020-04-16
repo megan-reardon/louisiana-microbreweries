@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 const BreweryCard = ({ id, name, city }) => {
   return (
-    <div>
+    <div className='brewery-card'>
       <h2>
       {name}
       </h2>
       <h2>
       {city}
       </h2>
+      <img src={`../../../logos/${id}.png`} />
     </div>
   )
 }

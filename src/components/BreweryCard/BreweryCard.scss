@@ -1,0 +1,16 @@
+.brewery-card {
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @include dropShadow;
+  img {
+    height: 10em;
+    width: 10em;
+  }
+
+}

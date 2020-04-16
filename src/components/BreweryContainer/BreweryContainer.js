@@ -15,7 +15,7 @@ const BreweryContainer = ({ breweries }) => {
   })
 
   return (
-    <section>
+    <section className='brewery-container'>
       {breweryInfo}
     </section>
   )
