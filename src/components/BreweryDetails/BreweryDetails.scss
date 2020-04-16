@@ -1,0 +1,9 @@
+.brewery-image {
+  img {
+    object-fit: cover;
+    opacity: .15;
+    height: 38em;
+    width: 100%;
+    z-index: -1;
+  }
+}

@@ -6,9 +6,11 @@ import PropTypes from 'prop-types';
 const BreweryDetails = (props) => {
   const { id, name, city, state, street, postal_code, website_url } = props
   return (
-    <div>
-      <h2>{street}</h2>
-    </div>
+    <article className='brewery-details-container'>
+      <section className='brewery-image'>
+        <img src={`../../../images/${id}.jpg`} />
+      </section>
+    </article>
   )
 }
 
