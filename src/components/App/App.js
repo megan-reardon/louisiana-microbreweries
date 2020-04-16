@@ -11,11 +11,12 @@ class App extends Component {
 
   componentDidMount = () => {
     apifetchBreweries()
-    .then(data => this.props.fetchBreweries(data.breweries))
+    .then(data => this.props.fetchBreweries(data))
     .catch(err => console.log(err.message))
   }
 
   render() {
+    console.log(this.state)
     return (
       <main>
         <Nav />
