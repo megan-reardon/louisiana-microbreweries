@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
 import Nav from '../Nav/Nav';
+import BreweryContainer from '../BreweryContainer/BreweryContainer';
 import { apifetchBreweries } from '../../apiCalls';
 
 class App extends Component {
@@ -16,10 +17,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <main>
         <Nav />
+        <BreweryContainer />
       </main>
     )
   }
