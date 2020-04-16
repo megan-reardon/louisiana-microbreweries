@@ -1,7 +1,8 @@
 header {
   padding: 0;
+  margin-bottom: 1em;
   width:100%;
-  height: 5em;
+  height: 6em;
   @include dropShadow;
   font-family: 'Inria Sans', sans-serif;
   display: inline-block;
@@ -11,8 +12,8 @@ header {
   }
 
   img {
-    width: 3em;
-    height: 3em;
+    width: 4em;
+    height: 4em;
     margin: 1em 1em 0 1em;
   }
 
