@@ -3,7 +3,7 @@ export const getBreweries = (breweries) => ({
   breweries
 })
 
-export const favoriteBrewery = (favorites) => ({
+export const getFavorites = (favorites) => ({
   type: 'GET_FAVORITES',
   favorites
 })

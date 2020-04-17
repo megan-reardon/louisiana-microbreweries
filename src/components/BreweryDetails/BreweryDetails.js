@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getFavorites } from '../../actions';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -13,7 +14,16 @@ class BreweryDetails extends Component {
 
   addToFavorites = (e) => {
     e.preventDefault();
-    this.setState({favoriteBreweries: [...this.state.favoriteBreweries, this.props]})
+    this.props.getFavoriteBreweries({
+      id: this.props.id,
+      name: this.props.name,
+      city: this.props.city,
+      state: this.props.state,
+      street: this.props.street,
+      postal_code: this.props.postal_code,
+      phone: this.props.phone,
+      website_url: this.props.website_url
+    })
   }
 
   render() {
@@ -34,12 +44,14 @@ class BreweryDetails extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//
-// })
-
-const mapStateToProps = (state) => ({
-  breweries: state.breweries
+const mapDispatchToProps = (dispatch) => ({
+  getFavoriteBreweries: favorites => dispatch(
+    getFavorites(favorites))
 })
 
-export default connect(mapStateToProps, null)(BreweryDetails);
+const mapStateToProps = (state) => ({
+  breweries: state.breweries,
+  favorites: state.favorites
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BreweryDetails);
