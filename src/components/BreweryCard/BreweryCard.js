@@ -18,7 +18,7 @@ const BreweryCard = ({ id, name, city }) => {
         {city}, LA
         </h1>
       </div>
-    </div>
+      </div>
     </Link>
   )
 }
