@@ -21,4 +21,12 @@ header {
     display: inline-block;
     font-weight: normal;
   }
+
+  .favorites-container {
+    button {
+      width: 8em;
+      height: 2em;
+      font-size: 1em;
+    }
+  }
 }
