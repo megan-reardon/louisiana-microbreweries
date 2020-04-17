@@ -14,11 +14,33 @@ const BreweryContainer = ({ breweries, favorites }) => {
       />)
   })
 
-  return (
-    <section className='brewery-container'>
+  let favoriteBreweryInfo = favorites.map(favorite => {
+    console.log(favorite)
+    return (
+      <BreweryCard
+        key={favorite.id}
+        id={favorite.id}
+        name={favorite.name}
+        city={favorite.city}
+      />)
+  })
+
+  if (window.location.href === 'http://localhost:3000/') {
+    console.log(favoriteBreweryInfo)
+    return (
+      <section className='brewery-container'>
       {breweryInfo}
-    </section>
-  )
+      </section>
+    )
+  } else if (window.location.href === 'http://localhost:3000/favorites') {
+    console.log(favoriteBreweryInfo)
+
+    return (
+      <section className='brewery-container'>
+      {favoriteBreweryInfo}
+      </section>
+    )
+  }
 }
 
 const mapStateToProps = (state) => ({

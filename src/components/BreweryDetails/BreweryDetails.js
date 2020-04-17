@@ -8,8 +8,6 @@ class BreweryDetails extends Component {
 
   toggleFavoriteButton = () => {
     const matchingBrewery = this.props.favorites.find(favorite => {
-      console.log(favorite.id)
-      console.log(this.props.id)
       return favorite.id === this.props.id
     })
     if (!matchingBrewery) {
@@ -18,9 +16,13 @@ class BreweryDetails extends Component {
       )
     } else {
       return (
-        <button onClick={this.addToFavorites}>Remove from Saved Breweries</button>
+        <button onClick={this.removeFromFavorites}>Remove from Saved Breweries</button>
       )
     }
+  }
+
+  removeFromFavorites = (e) => {
+    e.preventDefault();
   }
 
   addToFavorites = (e) => {

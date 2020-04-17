@@ -13,7 +13,7 @@ const Nav = () => {
       </div>
       <div className='favorites-container'>
       <Link
-      to={'/breweries/favorites'}
+      to={'/favorites'}
       >
         <button>View Favorites</button>
       </Link>

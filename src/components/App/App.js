@@ -38,6 +38,13 @@ class App extends Component {
                      />
             }}
           />
+          <Route
+            exact
+            path="/favorites/"
+            render={() => (
+              <BreweryContainer />
+            )}
+          />
         </Switch>
       </main>
     )
@@ -46,6 +53,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   breweries: state.breweries,
+  favorites: state.favorites
 })
 
 const mapDispatchToProps = (dispatch) => ({
