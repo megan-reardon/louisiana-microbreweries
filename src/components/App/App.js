@@ -10,6 +10,12 @@ import BreweryDetails from '../BreweryDetails/BreweryDetails';
 import { apifetchBreweries } from '../../apiCalls';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentPage: 'home'
+    }
+  }
 
   componentDidMount = () => {
     apifetchBreweries()
@@ -17,16 +23,29 @@ class App extends Component {
     .catch(err => console.log(err.message))
   }
 
+  goToFavorites = () => {
+    this.setState({currentPage: 'favorites'})
+  }
+
+  goToHomepage = () => {
+    this.setState({currentPage: 'home'})
+  }
+
   render() {
     return (
       <main>
-        <Nav />
+        <Nav
+        goToFavorites={this.goToFavorites}
+        goToHomepage={this.goToHomepage}
+        />
         <Switch>
           <Route
             exact
             path="/"
             render={() => (
-              <BreweryContainer />
+              <BreweryContainer
+              currentPage={this.state.currentPage}
+              />
             )}
           />
           <Route
@@ -42,7 +61,9 @@ class App extends Component {
             exact
             path="/favorites/"
             render={() => (
-              <BreweryContainer />
+               <BreweryContainer
+               currentPage={this.state.currentPage}
+              />
             )}
           />
         </Switch>

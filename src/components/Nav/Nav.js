@@ -3,19 +3,23 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = ({ goToFavorites, goToHomepage }) => {
 
   return (
     <header>
-      <div>
+      <div onClick={goToHomepage}>
+      <Link
+      to={'/'}
+      >
         <img src='../../../logos/fleur-de-lis.svg' alt='Fleur de lis logo'/>
         <h2>Louisiana Micreauxbreweries</h2>
+      </Link>
       </div>
       <div className='favorites-container'>
       <Link
       to={'/favorites'}
       >
-        <button>View Favorites</button>
+        <button onClick={goToFavorites}>View Favorites</button>
       </Link>
       </div>
     </header>

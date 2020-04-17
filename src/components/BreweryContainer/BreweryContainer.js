@@ -15,7 +15,6 @@ const BreweryContainer = ({ breweries, favorites }) => {
   })
 
   let favoriteBreweryInfo = favorites.map(favorite => {
-    console.log(favorite)
     return (
       <BreweryCard
         key={favorite.id}
@@ -26,14 +25,12 @@ const BreweryContainer = ({ breweries, favorites }) => {
   })
 
   if (window.location.href === 'http://localhost:3000/') {
-    console.log(favoriteBreweryInfo)
     return (
       <section className='brewery-container'>
       {breweryInfo}
       </section>
     )
   } else if (window.location.href === 'http://localhost:3000/favorites') {
-    console.log(favoriteBreweryInfo)
 
     return (
       <section className='brewery-container'>
