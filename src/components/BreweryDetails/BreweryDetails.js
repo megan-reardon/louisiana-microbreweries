@@ -5,12 +5,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class BreweryDetails extends Component {
-  constructor() {
-    super();
-    this.state = {
-      favoriteBreweries: []
-    }
-  }
 
   addToFavorites = (e) => {
     e.preventDefault();
