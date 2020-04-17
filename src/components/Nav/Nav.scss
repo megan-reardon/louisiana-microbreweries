@@ -5,7 +5,7 @@ header {
   height: 6em;
   @include dropShadow;
   font-family: 'Inria Sans', sans-serif;
-  display: inline-block;
+  display: flex;
 
   div {
     width: 26em;
@@ -23,10 +23,15 @@ header {
   }
 
   .favorites-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 30em;
     button {
-      width: 8em;
+      width: 9em;
       height: 2em;
-      font-size: 1em;
+      font-size: 1.3em;
+      cursor: pointer;
     }
   }
 }

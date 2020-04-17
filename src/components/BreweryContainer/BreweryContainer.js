@@ -3,7 +3,7 @@ import BreweryCard from '../BreweryCard/BreweryCard';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const BreweryContainer = ({ breweries }) => {
+const BreweryContainer = ({ breweries, favorites }) => {
   let breweryInfo = breweries.map(brewery => {
     return (
       <BreweryCard
@@ -14,15 +14,35 @@ const BreweryContainer = ({ breweries }) => {
       />)
   })
 
-  return (
-    <section className='brewery-container'>
+  let favoriteBreweryInfo = favorites.map(favorite => {
+    return (
+      <BreweryCard
+        key={favorite.id}
+        id={favorite.id}
+        name={favorite.name}
+        city={favorite.city}
+      />)
+  })
+
+  if (window.location.href === 'http://localhost:3000/') {
+    return (
+      <section className='brewery-container'>
       {breweryInfo}
-    </section>
-  )
+      </section>
+    )
+  } else if (window.location.href === 'http://localhost:3000/favorites') {
+
+    return (
+      <section className='brewery-container'>
+      {favoriteBreweryInfo}
+      </section>
+    )
+  }
 }
 
 const mapStateToProps = (state) => ({
-  breweries: state.breweries
+  breweries: state.breweries,
+  favorites: state.favorites
 })
 
 export default connect(mapStateToProps, null)(BreweryContainer);
