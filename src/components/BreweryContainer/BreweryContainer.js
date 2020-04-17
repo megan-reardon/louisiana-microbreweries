@@ -3,7 +3,7 @@ import BreweryCard from '../BreweryCard/BreweryCard';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const BreweryContainer = ({ breweries }) => {
+const BreweryContainer = ({ breweries, favorites }) => {
   let breweryInfo = breweries.map(brewery => {
     return (
       <BreweryCard
@@ -22,7 +22,8 @@ const BreweryContainer = ({ breweries }) => {
 }
 
 const mapStateToProps = (state) => ({
-  breweries: state.breweries
+  breweries: state.breweries,
+  favorites: state.favorites
 })
 
 export default connect(mapStateToProps, null)(BreweryContainer);

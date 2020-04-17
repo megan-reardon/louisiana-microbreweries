@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getFavorites } from '../../actions';
+import { addFavorite } from '../../actions';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class BreweryDetails extends Component {
 
+  toggleFavoriteButton = () => {
+    const matchingBrewery = this.props.favorites.find(favorite => {
+      console.log(favorite.id)
+      console.log(this.props.id)
+      return favorite.id === this.props.id
+    })
+    if (!matchingBrewery) {
+      return (
+        <button onClick={this.addToFavorites}>Add to Saved Breweries</button>
+      )
+    } else {
+      return (
+        <button onClick={this.addToFavorites}>Remove from Saved Breweries</button>
+      )
+    }
+  }
+
   addToFavorites = (e) => {
     e.preventDefault();
-    this.props.getFavoriteBreweries({
+    this.props.addFavoriteBreweries({
       id: this.props.id,
       name: this.props.name,
       city: this.props.city,
@@ -25,13 +42,14 @@ class BreweryDetails extends Component {
     return (
       <div className='brewery-details-container'>
       <section className='brewery-image'>
-      <img src={`../../../images/${id}.jpg`} />
-      </section>
-      <section className='brewery-info'>
-      <h1>{name}</h1>
-      <h1>Address: {street}, {city}, {state} {postal_code}</h1>
-      <h1>Website: {website_url}</h1>
-      <button onClick={this.addToFavorites}>Add to Saved Breweries</button>
+        <img src={`../../../images/${id}.jpg`} />
+        </section>
+        <section className='brewery-info'>
+        <h1>{name}</h1>
+        <h1>Address: {street}, {city}, {state} {postal_code}</h1>
+        <h1>Website: {website_url}</h1>
+        {this.toggleFavoriteButton()}
+
       </section>
       </div>
     )
@@ -39,8 +57,8 @@ class BreweryDetails extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getFavoriteBreweries: favorites => dispatch(
-    getFavorites(favorites))
+  addFavoriteBreweries: favorites => dispatch(
+    addFavorite(favorites))
 })
 
 const mapStateToProps = (state) => ({
