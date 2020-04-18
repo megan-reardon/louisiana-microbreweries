@@ -49,7 +49,7 @@ class BreweryDetails extends Component {
       <img className='brewery-logo' src={`../../../logos/${id}.png`} />
         <h2>{name}</h2>
         <p>Address: {street}, {city}, {state} {postal_code}</p>
-        <p>Website: {website_url}</p>
+        <p className='website-url'>Website: <a href={website_url}>{website_url}</a></p>
         <p>Phone: {phone}</p>
         {this.toggleFavoriteButton()}
       </section>

@@ -13,12 +13,19 @@ header {
   img {
     width: 4em;
     height: 4em;
-    margin: 1em 1em 0 1em;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
   }
 
   h2 {
     display: inline-block;
     font-weight: normal;
+    margin-left: .5em;
   }
 
   .favorites-container {
@@ -30,6 +37,8 @@ header {
       width: 11em;
       height: 2em;
       font-size: 1.3em;
+      border: none;
+      @include dropShadow;
     }
   }
 }
