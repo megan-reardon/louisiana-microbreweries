@@ -37,7 +37,7 @@ describe('Nav', () => {
 
     const titleEl = getByText('Louisiana Micreauxbreweries');
     const altText = getByAltText('Fleur de lis logo');
-    const buttonEl = getByText('View Favorites');
+    const buttonEl = getByText('View Saved Breweries');
 
     expect(titleEl).toBeInTheDocument();
     expect(altText).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe('Nav', () => {
 
   it('should call a function to go to the favorites on click', () => {
     const { getByText } = utils;
-    const favoriteBtn = getByText('View Favorites');
+    const favoriteBtn = getByText('View Saved Breweries');
 
     fireEvent.click(favoriteBtn);
 
