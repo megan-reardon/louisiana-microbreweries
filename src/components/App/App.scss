@@ -2,7 +2,7 @@
 *:after,
 *:before {
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Inria Sans', sans-serif;
   margin:0;
   padding:0;
 }
@@ -16,8 +16,13 @@ main {
     background: #DED1EE;
     position: sticky;
     top: 0px;
-    z-index: 9999;
+    z-index: 99;
   }
+
+  button {
+    cursor: pointer;
+  }
+
   .margin-wrap {
   margin:0 auto;
   max-width:1500px;

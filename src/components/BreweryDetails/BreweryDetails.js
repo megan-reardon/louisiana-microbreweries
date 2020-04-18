@@ -44,16 +44,14 @@ class BreweryDetails extends Component {
     const { id, name, city, state, street, postal_code, website_url, phone } = this.props
     return (
       <div className='brewery-details-container'>
-      <section className='brewery-image'>
-        <img src={`../../../images/${id}.jpg`} />
-        </section>
-        <section className='brewery-info'>
-        <h1>{name}</h1>
-        <h1>Address: {street}, {city}, {state} {postal_code}</h1>
-        <h1>Website: {website_url}</h1>
-        <h1>Phone: {phone}</h1>
+        <img className='brewery-image' src={`../../../images/${id}.jpg`} />
+      <section className='brewery-info'>
+      <img className='brewery-logo' src={`../../../logos/${id}.png`} />
+        <h2>{name}</h2>
+        <p>Address: {street}, {city}, {state} {postal_code}</p>
+        <p>Website: {website_url}</p>
+        <p>Phone: {phone}</p>
         {this.toggleFavoriteButton()}
-
       </section>
       </div>
     )
