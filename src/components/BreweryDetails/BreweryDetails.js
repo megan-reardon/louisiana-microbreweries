@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addFavorite } from '../../actions';
+import { addFavorite, removeFavorite } from '../../actions';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -21,12 +21,13 @@ class BreweryDetails extends Component {
     }
   }
 
-  removeFromFavorites = (e) => {
-    e.preventDefault();
+  removeFromFavorites = () => {
+    this.props.removeFavoriteBrewery({
+      id: this.props.id,
+    })
   }
 
-  addToFavorites = (e) => {
-    e.preventDefault();
+  addToFavorites = () => {
     this.props.addFavoriteBreweries({
       id: this.props.id,
       name: this.props.name,
@@ -61,7 +62,9 @@ class BreweryDetails extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   addFavoriteBreweries: favorites => dispatch(
-    addFavorite(favorites))
+    addFavorite(favorites)),
+  removeFavoriteBrewery: favorite => dispatch(
+    removeFavorite(favorite))
 })
 
 const mapStateToProps = (state) => ({

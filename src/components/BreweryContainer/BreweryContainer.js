@@ -30,11 +30,15 @@ const BreweryContainer = ({ breweries, favorites, currentPage }) => {
       {breweryInfo}
       </section>
     )
-  } else if (currentPage === 'favorites') {
+  } else if (currentPage === 'favorites' && favoriteBreweryInfo.length > 0) {
     return (
       <section data-testid='brewery-container' className='brewery-container'>
       {favoriteBreweryInfo}
       </section>
+    )
+  } else {
+    return (
+      <h2>You do not have any saved breweries</h2>
     )
   }
 }
