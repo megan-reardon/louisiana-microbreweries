@@ -11,10 +11,12 @@ describe('BreweryCard', () => {
   it('should render the brewery information on each brewery card', () => {
     const testStore = createStore(rootReducer);
     const testWrapper = <Provider store={testStore}>
-    <BreweryCard
-      name={'Parleaux Beer Lab'}
-      city={'New Orleans'}
-    />
+    <Router>
+      <BreweryCard
+        name={'Parleaux Beer Lab'}
+        city={'New Orleans'}
+      />
+    </Router>
     </Provider>;
 
     const { getByText, getByAltText } = render(testWrapper)

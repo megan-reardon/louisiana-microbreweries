@@ -26,14 +26,13 @@ const BreweryContainer = ({ breweries, favorites }) => {
 
   if (window.location.href === 'http://localhost:3000/') {
     return (
-      <section className='brewery-container'>
+      <section data-testid='brewery-container' className='brewery-container'>
       {breweryInfo}
       </section>
     )
   } else if (window.location.href === 'http://localhost:3000/favorites') {
-
     return (
-      <section className='brewery-container'>
+      <section data-testid='brewery-container' className='brewery-container'>
       {favoriteBreweryInfo}
       </section>
     )
