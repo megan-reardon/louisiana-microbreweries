@@ -20,7 +20,7 @@ describe('Nav', () => {
       <Router>
         <Nav
           goToFavorites={mockGoToFavorites}
-          goToHomepage={mockGoToFavorites}
+          goToHomepage={mockGoToHomepage}
         />
       </Router>
       </Provider>
@@ -33,7 +33,7 @@ describe('Nav', () => {
 
   it('should render the website title and logo', () => {
 
-    const { getByText, getByAltText } = utils
+    const { getByText, getByAltText } = utils;
 
     const titleEl = getByText('Louisiana Micreauxbreweries');
     const altText = getByAltText('Fleur de lis logo');
