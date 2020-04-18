@@ -10,6 +10,8 @@ import '@testing-library/jest-dom';
 describe('BreweryDetails', () => {
   let utils;
   let store;
+  const mockAddToFavorites = jest.fn();
+  const mockRemoveFromFavorites = jest.fn();
 
   beforeEach(() => {
     store = createStore(rootReducer);
@@ -24,6 +26,8 @@ describe('BreweryDetails', () => {
           postal_code={'70506-4130'}
           website_url={'http://www.cajunbrewing.com'}
           phone={'3378069196'}
+          removeFromFavorites={mockAddToFavorites}
+          addToFavorites={mockAddToFavorites}
         />
       </Router>
       </Provider>
@@ -49,5 +53,13 @@ describe('BreweryDetails', () => {
     expect(favoritesBtn).toBeInTheDocument();
   });
 
-  
+  it('the save brewery button should change to a remove brewery button after brewery has been favorited', () => {
+    const { getByText, debug } = utils;
+    const favoriteBtn = getByText('Save this Brewery');
+
+    fireEvent.click(favoriteBtn);
+    const removeBtn = getByText('Remove from Saved Breweries')
+
+    expect(removeBtn).toBeInTheDocument();
+  });
 })

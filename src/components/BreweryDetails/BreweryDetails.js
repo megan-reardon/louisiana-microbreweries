@@ -10,13 +10,13 @@ class BreweryDetails extends Component {
     const matchingBrewery = this.props.favorites.find(favorite => {
       return favorite.id === this.props.id
     })
-    if (!matchingBrewery) {
+    if (matchingBrewery) {
       return (
-        <button onClick={this.addToFavorites}>Save this Brewery</button>
+        <button onClick={this.removeFromFavorites}>Remove from Saved Breweries</button>
       )
     } else {
       return (
-        <button onClick={this.removeFromFavorites}>Remove from Saved Breweries</button>
+        <button onClick={this.addToFavorites}>Save this Brewery</button>
       )
     }
   }
