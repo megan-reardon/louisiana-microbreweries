@@ -31,7 +31,6 @@ const BreweryContainer = ({ breweries, favorites, currentPage }) => {
       </section>
     )
   } else if (currentPage === 'favorites' && favoriteBreweryInfo.length > 0) {
-    console.log(favoriteBreweryInfo)
     return (
       <section data-testid='brewery-container' className='brewery-container'>
       {favoriteBreweryInfo}

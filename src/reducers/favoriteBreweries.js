@@ -3,8 +3,16 @@ export const favorites = (state = [], action) => {
     case 'ADD_FAVORITE':
       return [...state, action.favorites];
     case 'REMOVE_FAVORITE':
-      return state 
+    let breweryInQuestion = state.find(brewery => {
+      return brewery.id === action.favorite.id
+    })
+
+    let brewIndex = state.indexOf(breweryInQuestion)
+
+      state.splice(brewIndex, 1)
+      console.log(state)
+      return [...state]
     default:
-      return state = [];
+      return state
   }
 }
