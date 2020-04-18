@@ -12,7 +12,7 @@ class BreweryDetails extends Component {
     })
     if (!matchingBrewery) {
       return (
-        <button onClick={this.addToFavorites}>Add to Saved Breweries</button>
+        <button onClick={this.addToFavorites}>Save this Brewery</button>
       )
     } else {
       return (
