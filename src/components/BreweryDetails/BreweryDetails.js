@@ -10,13 +10,13 @@ class BreweryDetails extends Component {
     const matchingBrewery = this.props.favorites.find(favorite => {
       return favorite.id === this.props.id
     })
-    if (!matchingBrewery) {
+    if (matchingBrewery) {
       return (
-        <button onClick={this.addToFavorites}>Add to Saved Breweries</button>
+        <button onClick={this.removeFromFavorites}>Remove from Saved Breweries</button>
       )
     } else {
       return (
-        <button onClick={this.removeFromFavorites}>Remove from Saved Breweries</button>
+        <button onClick={this.addToFavorites}>Save this Brewery</button>
       )
     }
   }
@@ -40,7 +40,7 @@ class BreweryDetails extends Component {
   }
 
   render() {
-    const { id, name, city, state, street, postal_code, website_url } = this.props
+    const { id, name, city, state, street, postal_code, website_url, phone } = this.props
     return (
       <div className='brewery-details-container'>
       <section className='brewery-image'>
@@ -50,6 +50,7 @@ class BreweryDetails extends Component {
         <h1>{name}</h1>
         <h1>Address: {street}, {city}, {state} {postal_code}</h1>
         <h1>Website: {website_url}</h1>
+        <h1>Phone: {phone}</h1>
         {this.toggleFavoriteButton()}
 
       </section>

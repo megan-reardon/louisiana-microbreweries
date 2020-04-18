@@ -7,7 +7,7 @@ const Nav = ({ goToFavorites, goToHomepage }) => {
 
   return (
     <header>
-      <div onClick={goToHomepage}>
+      <div data-testid='nav-container' onClick={goToHomepage}>
       <Link
       to={'/'}
       >
@@ -19,7 +19,7 @@ const Nav = ({ goToFavorites, goToHomepage }) => {
       <Link
       to={'/favorites'}
       >
-        <button onClick={goToFavorites}>View Favorites</button>
+        <button onClick={goToFavorites}>View Saved Breweries</button>
       </Link>
       </div>
     </header>

@@ -3,7 +3,7 @@ import BreweryCard from '../BreweryCard/BreweryCard';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const BreweryContainer = ({ breweries, favorites }) => {
+const BreweryContainer = ({ breweries, favorites, currentPage }) => {
   let breweryInfo = breweries.map(brewery => {
     return (
       <BreweryCard
@@ -24,16 +24,15 @@ const BreweryContainer = ({ breweries, favorites }) => {
       />)
   })
 
-  if (window.location.href === 'http://localhost:3000/') {
+  if (currentPage === 'home') {
     return (
-      <section className='brewery-container'>
+      <section data-testid='brewery-container' className='brewery-container'>
       {breweryInfo}
       </section>
     )
-  } else if (window.location.href === 'http://localhost:3000/favorites') {
-
+  } else if (currentPage === 'favorites') {
     return (
-      <section className='brewery-container'>
+      <section data-testid='brewery-container' className='brewery-container'>
       {favoriteBreweryInfo}
       </section>
     )
