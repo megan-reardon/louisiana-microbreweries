@@ -11,6 +11,7 @@ describe('Nav', () => {
   let utils;
   let store;
   const mockGoToHomepage = jest.fn();
+  const mockGoToFavorites = jest.fn();
 
   beforeEach(() => {
     store = createStore(rootReducer);
@@ -18,7 +19,8 @@ describe('Nav', () => {
       <Provider store={store}>
       <Router>
         <Nav
-          goToFavorites={mockGoToHomepage}
+          goToFavorites={mockGoToFavorites}
+          goToHomepage={mockGoToFavorites}
         />
       </Router>
       </Provider>
@@ -42,12 +44,22 @@ describe('Nav', () => {
     expect(buttonEl).toBeInTheDocument();
   });
 
-  it('should call a function to go to the homepage on click', () => {
+  it('should call a function to go to the favorites on click', () => {
     const { getByText } = utils;
     const favoriteBtn = getByText('View Favorites');
 
     fireEvent.click(favoriteBtn);
 
+    expect(mockGoToFavorites).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call a function to go to the homepage on click', () => {
+    const { getByTestId } = utils;
+    const containerEl = getByTestId('nav-container');
+
+    fireEvent.click(containerEl);
+
     expect(mockGoToHomepage).toHaveBeenCalledTimes(1);
+
   })
 })

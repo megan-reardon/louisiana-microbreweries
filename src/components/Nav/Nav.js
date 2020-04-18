@@ -7,7 +7,7 @@ const Nav = ({ goToFavorites, goToHomepage }) => {
 
   return (
     <header>
-      <div onClick={goToHomepage}>
+      <div data-testid='nav-container' onClick={goToHomepage}>
       <Link
       to={'/'}
       >
