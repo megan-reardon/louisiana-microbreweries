@@ -21,6 +21,11 @@ main {
 
   button {
     cursor: pointer;
+    outline: none;
+    &:hover {
+      background: #B2ADAD;
+      transform: scale(1.05);
+    }
   }
 
   .margin-wrap {

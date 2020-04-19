@@ -19,16 +19,13 @@
   height: 39em;
 
   button {
-    width: 14em;
-    height: 2.5em;
+    width: 14.5em;
+    height: 2.1em;
     font-size: 1.3em;
     background: white;
     border: none;
     @include dropShadow;
     margin-top: 1em;
-    &:hover {
-      background: #71C066;
-    }
   }
 }
 
