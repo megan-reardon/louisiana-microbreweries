@@ -10,8 +10,6 @@ import '@testing-library/jest-dom';
 describe('BreweryDetails', () => {
   let utils;
   let store;
-  const mockAddToFavorites = jest.fn();
-  const mockRemoveFromFavorites = jest.fn();
 
   beforeEach(() => {
     store = createStore(rootReducer);
@@ -26,8 +24,7 @@ describe('BreweryDetails', () => {
           postal_code={'70506-4130'}
           website_url={'http://www.cajunbrewing.com'}
           phone={'3378069196'}
-          removeFromFavorites={mockAddToFavorites}
-          addToFavorites={mockAddToFavorites}
+
         />
       </Router>
       </Provider>
@@ -41,9 +38,9 @@ describe('BreweryDetails', () => {
   it('should render the details for the selected brewery', () => {
     const { getByText } = utils;
     const nameEl = getByText('Cajun Brewing');
-    const addressEl = getByText('Address: 206 Rayburn St, Lafayette, Louisiana 70506-4130');
-    const phoneEl = getByText('Phone: 3378069196')
-    const websiteEl = getByText('Website: http://www.cajunbrewing.com')
+    const addressEl = getByText('206 Rayburn St, Lafayette, Louisiana 70506-4130');
+    const phoneEl = getByText('337-806-9196')
+    const websiteEl = getByText('http://www.cajunbrewing.com')
     const favoritesBtn = getByText('Save this Brewery')
 
     expect(nameEl).toBeInTheDocument();
