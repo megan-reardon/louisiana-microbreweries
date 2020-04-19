@@ -42,18 +42,17 @@ class BreweryDetails extends Component {
 
   render() {
     const { id, name, city, state, street, postal_code, website_url, phone } = this.props
+    let formattedPhone = phone.slice(0,3)+"-"+phone.slice(3,6)+"-"+phone.slice(6)
     return (
       <div className='brewery-details-container'>
-      <section className='brewery-image'>
-        <img src={`../../../images/${id}.jpg`} />
-        </section>
-        <section className='brewery-info'>
-        <h1>{name}</h1>
-        <h1>Address: {street}, {city}, {state} {postal_code}</h1>
-        <h1>Website: {website_url}</h1>
-        <h1>Phone: {phone}</h1>
+        <img className='brewery-image' src={`../../../images/${id}.jpg`} />
+      <section className='brewery-info'>
+      <img className='brewery-logo' src={`../../../logos/${id}.png`} />
+        <h2>{name}</h2>
+        <p>{street}, {city}, {state} {postal_code}</p>
+        <p className='website-url'><a href={website_url}>{website_url}</a></p>
+        <p>{formattedPhone}</p>
         {this.toggleFavoriteButton()}
-
       </section>
       </div>
     )

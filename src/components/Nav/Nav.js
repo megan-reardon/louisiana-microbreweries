@@ -9,6 +9,7 @@ const Nav = ({ goToFavorites, goToHomepage }) => {
     <header>
       <div data-testid='nav-container' onClick={goToHomepage}>
       <Link
+      className="header-logo"
       to={'/'}
       >
         <img src='../../../logos/fleur-de-lis.svg' alt='Fleur de lis logo'/>

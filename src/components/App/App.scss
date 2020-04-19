@@ -2,7 +2,7 @@
 *:after,
 *:before {
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Inria Sans', sans-serif;
   margin:0;
   padding:0;
 }
@@ -10,14 +10,24 @@
 main {
   height:100%;
   width:100%;
-  background: #E1E0E3;
+  background: $light-gray;
 
   header {
     background: #DED1EE;
     position: sticky;
     top: 0px;
-    z-index: 9999;
+    z-index: 99;
   }
+
+  button {
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background: #B2ADAD;
+      transform: scale(1.05);
+    }
+  }
+
   .margin-wrap {
   margin:0 auto;
   max-width:1500px;
