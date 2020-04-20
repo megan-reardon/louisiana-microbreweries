@@ -24,7 +24,6 @@ describe('BreweryDetails', () => {
           postal_code={'70506-4130'}
           website_url={'http://www.cajunbrewing.com'}
           phone={'3378069196'}
-
         />
       </Router>
       </Provider>
