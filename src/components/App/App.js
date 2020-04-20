@@ -66,6 +66,14 @@ class App extends Component {
               />
             )}
           />
+          <Route
+            path="*"
+            render={() => (
+               <BreweryContainer
+               currentPage={this.state.currentPage}
+              />
+            )}
+          />
         </Switch>
       </main>
     )

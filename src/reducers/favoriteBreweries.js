@@ -6,11 +6,8 @@ export const favorites = (state = [], action) => {
     let breweryInQuestion = state.find(brewery => {
       return brewery.id === action.favorite.id
     })
-
-    let brewIndex = state.indexOf(breweryInQuestion)
-
-      state.splice(brewIndex, 1)
-      console.log(state)
+    let brewIndex = state.indexOf(breweryInQuestion);
+      state.splice(brewIndex, 1);
       return [...state]
     default:
       return state

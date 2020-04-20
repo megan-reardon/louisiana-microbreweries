@@ -60,6 +60,6 @@ describe('Nav', () => {
     fireEvent.click(containerEl);
 
     expect(mockGoToHomepage).toHaveBeenCalledTimes(1);
+  });
 
-  })
 })
