@@ -5,3 +5,19 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
+
+.no-favorites {
+  background: white;
+  text-align: center;
+  padding-top: 10em;
+}
+
+.favorite-header {
+  margin: 1em;
+  font-weight: normal;
+  text-align: center;
+}
+
+.favorites-container {
+  min-height: 100vh;
+}

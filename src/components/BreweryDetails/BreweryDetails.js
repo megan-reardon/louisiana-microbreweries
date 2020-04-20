@@ -47,12 +47,12 @@ class BreweryDetails extends Component {
       <div className='brewery-details-container'>
         <img className='brewery-image' src={`../../../images/${id}.jpg`} />
       <section className='brewery-info'>
-      <img className='brewery-logo' src={`../../../logos/${id}.png`} />
-        <h2>{name}</h2>
-        <p>{street}, {city}, {state} {postal_code}</p>
-        <p className='website-url'><a href={website_url}>{website_url}</a></p>
-        <p>{formattedPhone}</p>
-        {this.toggleFavoriteButton()}
+        <img className='brewery-logo' src={`../../../logos/${id}.png`} />
+          <h2>{name}</h2>
+          <p>{street}, {city}, {state} {postal_code}</p>
+          <p className='website-url'><a href={website_url}>{website_url}</a></p>
+          <p>{formattedPhone}</p>
+          {this.toggleFavoriteButton()}
       </section>
       </div>
     )
@@ -70,5 +70,16 @@ const mapStateToProps = (state) => ({
   breweries: state.breweries,
   favorites: state.favorites
 })
+
+BreweryDetails.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  street: PropTypes.string,
+  postal_code: PropTypes.string,
+  website_url: PropTypes.string,
+  phone: PropTypes.string
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(BreweryDetails);

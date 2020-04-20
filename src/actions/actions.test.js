@@ -38,5 +38,5 @@ describe('Actions Tests', () => {
     const result = actions.removeFavorite([favorite1])
 
     expect(result).toEqual(expectedAction);
-  })
+  });
 })

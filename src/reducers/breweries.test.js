@@ -16,7 +16,6 @@ describe('Breweries reducers test', () => {
       breweries: [{id: 2941, name: 'Crying Eagle Brewing Company'}, {id: 2944, name: 'Flying Heart Brewing'}]
     }
     const result = breweries(initialState, action);
-
     expect(result).toEqual(expected);
   });
 })

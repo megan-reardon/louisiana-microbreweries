@@ -27,20 +27,31 @@ const BreweryContainer = ({ breweries, favorites, currentPage }) => {
   if (currentPage === 'home') {
     return (
       <section data-testid='brewery-container' className='brewery-container'>
-      {breweryInfo}
+        {breweryInfo}
       </section>
     )
   } else if (currentPage === 'favorites' && favoriteBreweryInfo.length > 0) {
     return (
-      <section data-testid='brewery-container' className='brewery-container'>
-      {favoriteBreweryInfo}
-      </section>
+      <div className='favorites-container'>
+        <h2 className='favorite-header'>Your Saved Breweries</h2>
+        <section data-testid='brewery-container' className='brewery-container'>
+          {favoriteBreweryInfo}
+        </section>
+      </div>
     )
   } else {
     return (
-      <h2>You do not have any saved breweries</h2>
+      <section className='no-favorites'>
+        <h2>You do not have any saved breweries yet!</h2>
+      </section>
     )
   }
+}
+
+BreweryContainer.propTypes = {
+  favorites: PropTypes.array,
+  breweries: PropTypes.array,
+  currentPage: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
