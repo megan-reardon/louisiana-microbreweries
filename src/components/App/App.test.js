@@ -51,7 +51,6 @@ describe('App', () => {
     expect(breweryName).toBeInTheDocument();
     expect(cityEl).toBeInTheDocument();
     expect(breweryContainer).toBeInTheDocument();
-
 });
 
   it('should be able to navigate to the brewery details page on click of a specific brewery card', async() => {
@@ -114,17 +113,7 @@ describe('App', () => {
     state: "Louisiana",
     postal_code: "70607-4753",
     phone: "3379904871",
-    website_url: "http://www.cryingeagle.com"},
-    {
-    id: 2944,
-    name: "Flying Heart Brewing",
-    street: "700 Barksdale Blvd",
-    city: "Bossier City",
-    state: "Louisiana",
-    postal_code: "71111-4502",
-    phone: "3183448775",
-    website_url: "http://www.flyingheartbrewing.com",
-    }
+    website_url: "http://www.cryingeagle.com"}
   ]
     apifetchBreweries.mockResolvedValueOnce(fetchedBreweries);
     const { getByText } = render(utils);
@@ -156,17 +145,7 @@ describe('App', () => {
     state: "Louisiana",
     postal_code: "70607-4753",
     phone: "3379904871",
-    website_url: "http://www.cryingeagle.com"},
-    {
-    id: 2944,
-    name: "Flying Heart Brewing",
-    street: "700 Barksdale Blvd",
-    city: "Bossier City",
-    state: "Louisiana",
-    postal_code: "71111-4502",
-    phone: "3183448775",
-    website_url: "http://www.flyingheartbrewing.com",
-    }
+    website_url: "http://www.cryingeagle.com"}
   ]
 
     apifetchBreweries.mockResolvedValueOnce(fetchedBreweries);
@@ -210,7 +189,6 @@ describe('App', () => {
     const { getByText, getByTestId } = render(utils);
     const containerEl = await waitForElement(() => getByTestId('2941 container'));
     const viewSavedBtn = getByText('View Saved Breweries');
-
 
     fireEvent.click(containerEl);
 
