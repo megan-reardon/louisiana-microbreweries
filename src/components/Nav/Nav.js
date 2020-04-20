@@ -27,4 +27,9 @@ const Nav = ({ goToFavorites, goToHomepage }) => {
   )
 }
 
+Nav.propTypes = {
+  goToHomepage: PropTypes.func,
+  goToFavorites: PropTypes.func
+}
+
 export default Nav;

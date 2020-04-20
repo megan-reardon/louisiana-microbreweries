@@ -43,6 +43,12 @@ const BreweryContainer = ({ breweries, favorites, currentPage }) => {
   }
 }
 
+BreweryContainer.propTypes = {
+  favorites: PropTypes.array,
+  breweries: PropTypes.array,
+  currentPage: PropTypes.string
+}
+
 const mapStateToProps = (state) => ({
   breweries: state.breweries,
   favorites: state.favorites

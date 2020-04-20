@@ -71,4 +71,15 @@ const mapStateToProps = (state) => ({
   favorites: state.favorites
 })
 
+BreweryDetails.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  street: PropTypes.string,
+  postal_code: PropTypes.string,
+  website_url: PropTypes.string,
+  phone: PropTypes.string
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(BreweryDetails);

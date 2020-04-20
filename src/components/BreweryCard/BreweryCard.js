@@ -27,4 +27,10 @@ const mapStateToProps = (state) => ({
   breweries: state.breweries
 })
 
+BreweryCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  city: PropTypes.string
+}
+
 export default connect(mapStateToProps, null)(BreweryCard);
