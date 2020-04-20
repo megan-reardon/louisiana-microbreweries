@@ -129,7 +129,7 @@ describe('App', () => {
     apifetchBreweries.mockResolvedValueOnce(fetchedBreweries);
     const { getByText } = render(utils);
     const favoriteBtn = getByText('View Saved Breweries');
-  
+
     fireEvent.click(favoriteBtn);
 
     const errMessage = await waitForElement(() => getByText('You do not have any saved breweries yet!'));
@@ -170,7 +170,7 @@ describe('App', () => {
   ]
 
     apifetchBreweries.mockResolvedValueOnce(fetchedBreweries);
-    const { getByText,  getByTestId, debug } = render(utils);
+    const { getByText, getByTestId } = render(utils);
     await waitForElement(() => getByTestId('2941 container'));
 
     fireEvent.click(getByTestId('2941 container'))
@@ -183,4 +183,48 @@ describe('App', () => {
     const cityEl = await waitForElement(() => getByText('Lake Charles, LA'))
     expect(cityEl).toBeInTheDocument();
   });
+
+  it('should be able to remove a brewery from saved after', async () => {
+    const store = createStore(rootReducer);
+    const utils =
+      <Provider store={store}>
+        <Router>
+          <App
+          />
+        </Router>
+      </Provider>;
+
+  const fetchedBreweries =
+  [
+    {id: 2941,
+    name: "Crying Eagle Brewing Company",
+    street: "1165 E McNeese St",
+    city: "Lake Charles",
+    state: "Louisiana",
+    postal_code: "70607-4753",
+    phone: "3379904871",
+    website_url: "http://www.cryingeagle.com"}
+  ]
+
+    apifetchBreweries.mockResolvedValueOnce(fetchedBreweries);
+    const { getByText, getByTestId } = render(utils);
+    const containerEl = await waitForElement(() => getByTestId('2941 container'));
+    const viewSavedBtn = getByText('View Saved Breweries');
+
+
+    fireEvent.click(containerEl);
+
+    const favoriteBtn = await waitForElement(() => getByText('Save this Brewery'));
+
+    fireEvent.click(favoriteBtn);
+
+    const unfavoriteBtn = await waitForElement(() => getByText('Remove from Saved Breweries'))
+
+    fireEvent.click(unfavoriteBtn);
+    fireEvent.click(viewSavedBtn);
+
+    const errText = await waitForElement(() => getByText('You do not have any saved breweries yet!'))
+
+    expect(errText).toBeInTheDocument();
+  })
 })
