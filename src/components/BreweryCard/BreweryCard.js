@@ -8,7 +8,7 @@ const BreweryCard = ({ id, name, city }) => {
     <Link
     to={`/breweries/${id}`}
     >
-    <div className='brewery-card'>
+    <div className='brewery-card' data-testid={`${id} container`}>
       <img src={`../../../logos/${id}.png`} alt={`Logo for ${name}`}/>
       <div className='brewery-city-container'>
         <h2>
