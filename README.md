@@ -7,12 +7,9 @@ Louisiana Micreauxbreweries is an app for beer enthusiasts who live in the great
 
 [Megan Venetianer](https://github.com/megan-venetianer)
 
-#### Screenshots
-![Dashboard]()
-![Details Page]()
 
 #### In Action
-![Gif of app](https://i.imgur.com/KDINU8B.gif)
+![Gif of app](https://i.imgur.com/Nebv4jp.gif)
 
 #### Technologies Used
 Development: Redux, React.js, Scss/Sass
