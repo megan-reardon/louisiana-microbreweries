@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Nav = ({ goToFavorites, goToHomepage }) => {
   return (
@@ -15,13 +15,11 @@ const Nav = ({ goToFavorites, goToHomepage }) => {
         <h2>Louisiana Micreauxbreweries</h2>
       </Link>
       </div>
-      <div className='favorites-container'>
-      <Link
+      <NavLink
       to={'/favorites'}
       >
         <button onClick={goToFavorites}>View Saved Breweries</button>
-      </Link>
-      </div>
+      </NavLink>
     </header>
   )
 }
