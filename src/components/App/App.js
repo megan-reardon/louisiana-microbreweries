@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getBreweries } from '../../actions';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-
 import Nav from '../Nav/Nav';
 import BreweryContainer from '../BreweryContainer/BreweryContainer';
 import BreweryDetails from '../BreweryDetails/BreweryDetails';

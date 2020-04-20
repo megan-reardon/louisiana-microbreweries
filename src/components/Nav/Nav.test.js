@@ -32,9 +32,7 @@ describe('Nav', () => {
   });
 
   it('should render the website title and logo', () => {
-
     const { getByText, getByAltText } = utils;
-
     const titleEl = getByText('Louisiana Micreauxbreweries');
     const altText = getByAltText('Fleur de lis logo');
     const buttonEl = getByText('View Saved Breweries');
