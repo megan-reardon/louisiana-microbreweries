@@ -32,9 +32,12 @@ const BreweryContainer = ({ breweries, favorites, currentPage }) => {
     )
   } else if (currentPage === 'favorites' && favoriteBreweryInfo.length > 0) {
     return (
-      <section data-testid='brewery-container' className='brewery-container'>
-        {favoriteBreweryInfo}
-      </section>
+      <div className='favorites-container'>
+        <h2 className='favorite-header'>Your Saved Breweries</h2>
+        <section data-testid='brewery-container' className='brewery-container'>
+          {favoriteBreweryInfo}
+        </section>
+      </div>
     )
   } else {
     return (
