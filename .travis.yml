@@ -1,5 +1,10 @@
 language: node_js
 node_js:
-  - "node"
-notifications:
+- node
+notifications: 
 email: false
+deploy:
+  api_key:
+    secure: VTZBaY2OF7Z0zZEHwnNSaAZ1S3Hphdy34duv0zOG1N4E12EPI5ey9ByfeZMvfuZlyv1ocpOS3CHVvvIz6mbkVPM3IgJVpOPSp01rnZ0ifDFtlbmGFNJsi6cvFXvSE6n3zwxhhlS+E95+u8mYKPLqFEP+40CJB3JwhaUjeWOzVg4zmpYPJiUhRAdyOKUwACCflhmg3DdMBpVhX/nC+IyXZBBpmktLFlUHcR6CVBopaCsbDJj9QMKqE7qNhJ91F6bcAjJknEi/oE9PlQThf5qR7k5AW6cQs4o664dap8w/0J9/g/TAJC3UimCTTDzPynpoHMoKvOBJEYR8RRb9UghtykWUDfhpJybbfUxoM6VJPa5PnK+z6cPy8M7vRjoA/i4E2OmZxM+MzcmqHtBGziF4RwwN6tITfUkfzFuLtip/vaeh5VV3RamuxNHxx5LW5RUYqKiFGKotF5D5AEC6os3OhxSxiLo5IsJf/zkuVB4OF2tC0apyCsSZN5Um/WF5ZBnEOw7RbTLVR0UxNzHyYvbsjq+RTsyoafwuIZVDnpLtOsLLmsmLWwByRtC+uxVU6TrZ0fp8H/mnMR3W2zOS+xId0wRz+HbtcvA2D8NDfPV2sI37JqntmHf9ulfvRydd+rsWMc5rhTqS4Pq/lzrrUK0VRFJoJVKfyGfs3G7D39EsF0o=
+  app: louisiana-microbreweries
+  skip_cleanup: true
